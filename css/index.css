@@ -1,0 +1,531 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  max-width: 1000vh;
+}
+
+body {
+  background-color: rgb(41, 39, 39);
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size: 12px;
+}
+/**computadores**/
+@media (min-width: 991px) {
+  .Nav {
+    position: relative;
+    display: flex;
+    background-color: black;
+    width: 100%;
+    flex-flow: row nowrap;
+    .text {
+      position: relative;
+      text-align: center;
+      color: white;
+      justify-items: start;
+      padding: 15px;
+      padding-left: 10rem;
+      padding-right: 20rem;
+      font-size: 19px;
+    }
+    .container {
+      width: 30rem;
+      display: flex;
+      align-items: center;
+    }
+    .button {
+      position: relative;
+      width: 7rem;
+      height: 2rem;
+      margin: 10px;
+    }
+
+    .button a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.051);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      border-top: 1px solid rgba(250, 52, 52, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 10;
+      color: #fff;
+      border-radius: 2rem;
+      font-weight: 4000;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: 1s;
+      overflow: hidden;
+      backdrop-filter: blur(15px);
+    }
+
+    .button:hover a {
+      letter-spacing: 3px;
+    }
+
+    .button a:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0.149),
+        transparent
+      );
+      transform: skewX(45deg);
+      transition: 1s;
+      transition-delay: 0.5s;
+    }
+
+    a:hover::before {
+      transform: skewX(45deg) translateX(200%);
+      transition-delay: 0s;
+    }
+
+    .button:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--clr-glow);
+      bottom: -5px;
+      width: 30px;
+      height: 10px;
+      border-radius: 10px;
+      transition: 0.5s;
+      transition-delay: 0s;
+    }
+
+    .button:hover::before {
+      bottom: 0px;
+      height: 50%;
+      width: 80%;
+      border-radius: 30px;
+      transition-delay: 0.5s;
+    }
+
+    .button:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--clr-glow);
+      top: -5px;
+      width: 30px;
+      height: 10px;
+      border-radius: 10px;
+      transition: 0.5s;
+      transition-delay: 0s;
+    }
+
+    .button:hover::after {
+      top: 0px;
+      height: 50%;
+      width: 80%;
+      border-radius: 30px;
+      transition-delay: 0.5s;
+    }
+
+    .button:nth-child(1):before,
+    .button:nth-child(1):after {
+      background: var(--clr);
+      box-shadow: 0 0 5px var(--clr), 0 0 15px var(--clr), 0 0 30px var(--clr),
+        0 0 60px var(--clr);
+    }
+
+    .button:nth-child(2):before,
+    .button:nth-child(2):after {
+      background: var(--clr);
+      box-shadow: 0 0 5px var(--clr), 0 0 15px var(--clr), 0 0 30px var(--clr),
+        0 0 60px var(--clr);
+    }
+
+    .button:nth-child(3):before,
+    .button:nth-child(3):after {
+      background: var(--clr);
+      box-shadow: 0 0 5px var(--clr), 0 0 15px var(--clr), 0 0 30px var(--clr),
+        0 0 60px var(--clr);
+    }
+  }
+
+  .Tarject {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 47rem;
+    height: 24rem;
+    margin: 2rem auto;
+    margin-bottom: 4rem;
+    border: 6px solid black;
+    background-color: #282c34;
+    background: linear-gradient(50deg, rgb(1, 29, 85) 0%, rgb(32, 0, 0) 70%);
+    box-shadow: 0 7px 20px 5px #00000088;
+    border-radius: 4rem;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    overflow: hidden;
+    transition: 0.5s all;
+
+    .Card {
+      display: flexbox;
+      justify-content: space-around;
+      height: 100vh;
+      .logo {
+        position: relative;
+        float: left;
+        padding-left: 30px;
+        padding-top: 10px;
+        border-radius: 0.5rem;
+        max-width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+      .titulo {
+        h1 {
+          position: relative;
+          float: right;
+          padding-right: 7rem;
+          padding-top: 20px;
+          color: rgb(169, 184, 184);
+          font-size: 70px;
+          margin: 1rem;
+          text-decoration: underline 5px;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+      }
+      .contenido{
+        p {
+          float: right;
+          text-align: center;
+          padding-top: 4rem;
+          padding-inline: 2rem;
+          margin: 15px auto;
+          font-size: 20px;
+          color: #a89ec9;
+        }
+      }
+    }
+    ::before {
+      position: fixed;
+      content: "";
+      box-shadow: 0 0 100px 40px #ffffff08;
+      top: -10%;
+      left: -100%;
+      transform: rotate(-45deg);
+      height: 60rem;
+      transition: 0.7s all;
+    }
+    &:hover {
+      border: 1px solid #ffffff44;
+      box-shadow: 0 7px 50px 10px #000000aa;
+      transform: scale(1.015);
+      filter: brightness(1.3);
+      ::before {
+        filter: brightness(0.5);
+        top: -100%;
+        left: 200%;
+      }
+    }
+  }
+
+  .projects {
+    text-align: center;
+  }
+
+  footer {
+    display: flex;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    .content {
+      justify-content: flex-start;
+      .copyright {
+        text-align: center;
+        padding-right: 20px;
+        padding-left: 5rem;
+        border-right: 5px solid white;
+        p {
+          color: white;
+        }
+      }
+    }
+  }
+}
+/**tablets**/
+@media (min-width: 768px) and (max-width: 990px) {
+  
+}
+
+/**celulares**/
+@media (max-width: 767px) {
+  .Nav {
+    position: relative;
+    display: flow-root;
+    width: 47rem;
+    flex-flow: row nowrap;
+    background-color: black;
+    .text {
+      display: flexbox;
+      float: left;
+      padding-left: 50px;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+      
+    }
+    .container {
+      display: flex;
+      float: right;
+      padding-right: 25px;
+      
+    }
+    .button {
+      position: relative;
+      width: 7rem;
+      height: 2rem;
+      margin: 10px;
+    }
+
+    .button a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.051);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      border-top: 1px solid rgba(250, 52, 52, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 10;
+      color: #fff;
+      border-radius: 2rem;
+      font-weight: 4000;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: 1s;
+      overflow: hidden;
+      backdrop-filter: blur(15px);
+    }
+
+    .button:hover a {
+      letter-spacing: 3px;
+    }
+
+    .button a:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0.149),
+        transparent
+      );
+      transform: skewX(45deg);
+      transition: 1s;
+      transition-delay: 0.5s;
+    }
+
+    a:hover::before {
+      transform: skewX(45deg) translateX(200%);
+      transition-delay: 0s;
+    }
+
+    .button:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--clr-glow);
+      bottom: -5px;
+      width: 30px;
+      height: 10px;
+      border-radius: 10px;
+      transition: 0.5s;
+      transition-delay: 0s;
+    }
+
+    .button:hover::before {
+      bottom: 0px;
+      height: 50%;
+      width: 80%;
+      border-radius: 30px;
+      transition-delay: 0.5s;
+    }
+
+    .button:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--clr-glow);
+      top: -5px;
+      width: 30px;
+      height: 10px;
+      border-radius: 10px;
+      transition: 0.5s;
+      transition-delay: 0s;
+    }
+
+    .button:hover::after {
+      top: 0px;
+      height: 50%;
+      width: 80%;
+      border-radius: 30px;
+      transition-delay: 0.5s;
+    }
+
+    .button:nth-child(1):before,
+    .button:nth-child(1):after {
+      background: var(--clr);
+      box-shadow: 0 0 5px var(--clr), 0 0 15px var(--clr), 0 0 30px var(--clr),
+        0 0 60px var(--clr);
+    }
+
+    .button:nth-child(2):before,
+    .button:nth-child(2):after {
+      background: var(--clr);
+      box-shadow: 0 0 5px var(--clr), 0 0 15px var(--clr), 0 0 30px var(--clr),
+        0 0 60px var(--clr);
+    }
+
+    .button:nth-child(3):before,
+    .button:nth-child(3):after {
+      background: var(--clr);
+      box-shadow: 0 0 5px var(--clr), 0 0 15px var(--clr), 0 0 30px var(--clr),
+        0 0 60px var(--clr);
+    }
+  }
+
+  .Tarject {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 47rem;
+    height: 24rem;
+    margin: 2rem auto;
+    margin-bottom: 4rem;
+    border: 6px solid black;
+    background-color: #282c34;
+    background: linear-gradient(50deg, rgb(1, 29, 85) 0%, rgb(32, 0, 0) 70%);
+    box-shadow: 0 7px 20px 5px #00000088;
+    border-radius: 4rem;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    overflow: hidden;
+    transition: 0.5s all;
+
+    .Card {
+      display: flexbox;
+      justify-content: space-around;
+      height: 100vh;
+      .logo {
+        position: relative;
+        float: left;
+        padding-left: 30px;
+        padding-top: 10px;
+        border-radius: 0.5rem;
+        max-width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+      .titulo {
+        h1 {
+          position: relative;
+          float: right;
+          padding-right: 7rem;
+          padding-top: 20px;
+          color: rgb(169, 184, 184);
+          font-size: 70px;
+          margin: 1rem;
+          text-decoration: underline 5px;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+      }
+      .contenido{
+        p {
+          float: right;
+          text-align: center;
+          padding-top: 4rem;
+          padding-inline: 2rem;
+          margin: 15px auto;
+          font-size: 20px;
+          color: #a89ec9;
+        }
+      }
+    }
+    ::before {
+      position: fixed;
+      content: "";
+      box-shadow: 0 0 100px 40px #ffffff08;
+      top: -10%;
+      left: -100%;
+      transform: rotate(-45deg);
+      height: 60rem;
+      transition: 0.7s all;
+    }
+    &:hover {
+      border: 1px solid #ffffff44;
+      box-shadow: 0 7px 50px 10px #000000aa;
+      transform: scale(1.015);
+      filter: brightness(1.3);
+      ::before {
+        filter: brightness(0.5);
+        top: -100%;
+        left: 200%;
+      }
+    }
+  }
+
+  .projects {
+  position: relative;
+  width: 47rem;
+  text-align: center;
+  padding: 2rem ;
+  }
+
+  footer {
+    display: flex;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 47rem;
+    padding: 10px;
+    background-color: black;
+    .content {
+      justify-content: flex-start;
+      .copyright {
+        text-align: center;
+        padding-right: 10px;
+        padding-left: 1rem;
+        border-right: 2px solid white;
+        p {
+          color: white;
+        }
+      }
+    }
+  }
+}
